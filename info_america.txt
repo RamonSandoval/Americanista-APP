@@ -1,0 +1,15 @@
+America
+id: 2287
+name: Club America
+
+
+Mexico 
+code:MX
+
+Guillermo Ococho
+id:2098
+
+Team informations
+Trophies by player id
+
+Api Key2: 069c410e33msh94b5d9703c72a69p1cd47djsn5f6506384e39
