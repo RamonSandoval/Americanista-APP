@@ -20,7 +20,7 @@ class _OpenMainState extends State<OpenMain> {
     Inicio(),
     Text('Tabla General'),
     Player(),
-    Text("data")
+    Text("dassta")
   ];
 
   void onTabTapped(int index) {
