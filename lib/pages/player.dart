@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:proyecto_futbol/services/ptrophy_service.dart';
+import 'package:proyecto_futbol/services/football_service.dart';
 // ignore_for_file: prefer_const_constructors
 
 class Player extends StatelessWidget {

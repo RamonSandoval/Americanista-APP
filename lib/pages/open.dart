@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:proyecto_futbol/pages/inicio.dart';
 import 'package:proyecto_futbol/pages/player.dart';
+import 'package:proyecto_futbol/pages/tabla.dart';
 import 'package:proyecto_futbol/pages/usuario.dart';
 import 'package:proyecto_futbol/routes/routes.dart';
 
@@ -15,13 +16,8 @@ class OpenMain extends StatefulWidget {
 }
 
 class _OpenMainState extends State<OpenMain> {
-  int _currentIndex = 2;
-  final List<Widget> _children = [
-    Inicio(),
-    Text('Tabla General'),
-    Player(),
-    Text("dassta")
-  ];
+  int _currentIndex = 1;
+  final List<Widget> _children = [Inicio(), Tabla(), Player(), Text("data")];
 
   void onTabTapped(int index) {
     setState(() {
