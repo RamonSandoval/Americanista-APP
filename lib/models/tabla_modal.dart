@@ -19,7 +19,7 @@ class TablaGeneral {
   List<dynamic> errors;
   int results;
   Paging paging;
-  List<Response> response;
+  List<Tabla> response;
 
   factory TablaGeneral.fromJson(String str) =>
       TablaGeneral.fromMap(json.decode(str));
@@ -32,8 +32,8 @@ class TablaGeneral {
         errors: List<dynamic>.from(json["errors"].map((x) => x)),
         results: json["results"],
         paging: Paging.fromMap(json["paging"]),
-        response: List<Response>.from(
-            json["response"].map((x) => Response.fromMap(x))),
+        response:
+            List<Tabla>.from(json["response"].map((x) => Tabla.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
@@ -95,18 +95,18 @@ class Parameters {
       };
 }
 
-class Response {
-  Response({
+class Tabla {
+  Tabla({
     required this.league,
   });
 
   League league;
 
-  factory Response.fromJson(String str) => Response.fromMap(json.decode(str));
+  factory Tabla.fromJson(String str) => Tabla.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory Response.fromMap(Map<String, dynamic> json) => Response(
+  factory Tabla.fromMap(Map<String, dynamic> json) => Tabla(
         league: League.fromMap(json["league"]),
       );
 
