@@ -9,7 +9,7 @@ class FootBallServices extends ChangeNotifier {
   final String _apiKey = '069c410e33msh94b5d9703c72a69p1cd47djsn5f6506384e39';
 
   List<Response> propiedadesJugador = [];
-  List<Tabla> propiedadesTabla = [];
+  List<List<Standing>> propiedadesTabla = [];
 
   FootBallServices() {
     getServicePlayer();
@@ -23,8 +23,8 @@ class FootBallServices extends ChangeNotifier {
     final respuesta = await http.get(url, headers: {'X-RapidApi-Key': _apiKey});
 
     final tabla = TablaGeneral.fromJson(respuesta.body);
-    propiedadesTabla = tabla.tablaGeneralGet as List<Tabla>;
-    print(propiedadesJugador);
+    propiedadesTabla = tabla.standings!;
+    print(propiedadesTabla);
   }
 
 //Funcion que se conecta a la api lista de player

@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final jugador = jugadorFromMap(jsonString);
-
 import 'dart:convert';
 
 class Jugador {

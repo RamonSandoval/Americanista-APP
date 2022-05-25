@@ -3,13 +3,37 @@ id: 2287
 name: Club America
 
 
+Chivas
+id:2278
+name:Guadalajara Chivas
+
+Cruz Azul
+id:2295
+name: Cruz Azul
+
+
+
 Mexico 
 code:MX
 
 Guillermo Ococho
 id:2098
 
-Team informations
-Trophies by player id
+
+
+Liga MX id 262
+
+
+Inicio (Noticias)
+Tabla general (Standings by league id)
+Jugadores del america (players squads)
+Informacion del estadio y ligas para las que juega
+
+
+
+
+
+
+
 
 Api Key2: 069c410e33msh94b5d9703c72a69p1cd47djsn5f6506384e39
