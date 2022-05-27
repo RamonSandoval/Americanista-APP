@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Futbol Api',
       home: OpenMain(),
-      routes: MovPage.route,
+      //routes: MovPage.route,
     );
   }
 }

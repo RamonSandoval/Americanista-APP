@@ -33,7 +33,7 @@ Informacion del estadio y ligas para las que juega
 
 
 
-
+Fixture: 676200
 
 
 Api Key2: 069c410e33msh94b5d9703c72a69p1cd47djsn5f6506384e39

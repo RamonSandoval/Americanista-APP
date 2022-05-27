@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:proyecto_futbol/pages/Alineacion.dart';
 import 'package:proyecto_futbol/pages/inicio.dart';
-import 'package:proyecto_futbol/pages/player.dart';
+import 'package:proyecto_futbol/pages/players.dart';
 import 'package:proyecto_futbol/pages/tabla.dart';
 import 'package:proyecto_futbol/pages/usuario.dart';
 import 'package:proyecto_futbol/routes/routes.dart';
@@ -10,14 +11,19 @@ class OpenMain extends StatefulWidget {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[];
-
   @override
   State<OpenMain> createState() => _OpenMainState();
 }
 
 class _OpenMainState extends State<OpenMain> {
   int _currentIndex = 1;
-  final List<Widget> _children = [Inicio(), Tabla(), Player(), Text("data")];
+  final List<Widget> _children = [
+    Inicio(),
+    Tabla(),
+    Players(),
+    Alineacion(),
+    Text("data")
+  ];
 
   void onTabTapped(int index) {
     setState(() {
@@ -27,18 +33,8 @@ class _OpenMainState extends State<OpenMain> {
 
   @override
   Widget build(BuildContext context) {
-    //print(footballDataService.propiedadesJugador[0].country);
-
     return Scaffold(
         backgroundColor: Color(0xFFeeeaa0),
-        /*appBar: AppBar(
-          centerTitle: true,
-          title: const Text(
-            'Americanista',
-          ),
-          backgroundColor: Color(0xFF10203c),
-        ),
-        */
         body: _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -57,6 +53,10 @@ class _OpenMainState extends State<OpenMain> {
                 size: 20,
               ),
               label: 'Jugadores',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.sports_soccer_outlined, size: 20),
+              label: 'Alineacion',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.question_mark_outlined, size: 20),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:proyecto_futbol/pages/player.dart';
+import 'package:proyecto_futbol/pages/players.dart';
 import 'package:proyecto_futbol/routes/routes.dart';
 
 class Usuario extends StatefulWidget {
