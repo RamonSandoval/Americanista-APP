@@ -3,14 +3,17 @@ import 'package:http/http.dart' as http;
 import 'package:proyecto_futbol/models/alineacion_modal.dart';
 import 'package:proyecto_futbol/models/estadio_modal.dart';
 import 'package:proyecto_futbol/models/jugadores.dart';
+import 'package:proyecto_futbol/models/tabla_general.dart';
 
 class FootBallServices extends ChangeNotifier {
   final String _urlBase = 'api-football-v1.p.rapidapi.com';
   final String _apiKey = '069c410e33msh94b5d9703c72a69p1cd47djsn5f6506384e39';
+  String season = '';
 
   List<EstadioInfo> propiedadesEstadio = [];
   List<AlineacionTabla> propiedadesAlineacion = [];
   List<Jugadores> propiedadesJugadores = [];
+  List<TablaGeneral> propiedadesTabla = [];
 
   FootBallServices() {
     getServiceEstadio();
@@ -39,7 +42,7 @@ class FootBallServices extends ChangeNotifier {
 
     final jugadores = JugadoresAme.fromJson(respuesta.body);
     propiedadesJugadores = jugadores.response;
-    print(propiedadesJugadores[0].players[0].name);
+    //print(propiedadesJugadores[0].players[0].name);
     notifyListeners();
   }
 
@@ -57,6 +60,17 @@ class FootBallServices extends ChangeNotifier {
   }
 
   /* -------------------------------------------------------------------------------------- */
+  getServiceTablaGeneral() async {
+    final url = Uri.https(
+        _urlBase, '/v3/standings', {'season': '2021', 'league': '262'});
+    final respuesta = await http.get(url, headers: {'X-RapidApi-Key': _apiKey});
 
-  /*-------------------------------------------------------------------------------------- */
+    final tabla = General.fromJson(respuesta.body);
+    propiedadesTabla = tabla.response;
+    print(propiedadesTabla[0].league);
+    //print(propiedadesEstadio[0].team.founded);
+
+    notifyListeners();
+    /*-------------------------------------------------------------------------------------- */
+  }
 }

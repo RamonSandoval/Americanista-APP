@@ -20,6 +20,24 @@ class Alineacion extends StatelessWidget {
     }
 
     return Scaffold(
+      /*
+      drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+                child: Text('DrawerHeader'),
+              ),
+              ListTile(
+                title: const Text('Item 1'),
+              )
+            ],
+          ),
+        ),
+        */
       appBar: AppBar(
         title: const Text(
           'Alineación',
