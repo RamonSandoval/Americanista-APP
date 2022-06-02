@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-class JugadoresAme {
-  JugadoresAme({
+class General {
+  General({
     required this.jugadoresAmeGet,
     required this.parameters,
     required this.errors,
@@ -19,21 +19,20 @@ class JugadoresAme {
   List<dynamic> errors;
   int results;
   Paging paging;
-  List<Response> response;
+  List<TablaGeneral> response;
 
-  factory JugadoresAme.fromJson(String str) =>
-      JugadoresAme.fromMap(json.decode(str));
+  factory General.fromJson(String str) => General.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory JugadoresAme.fromMap(Map<String, dynamic> json) => JugadoresAme(
+  factory General.fromMap(Map<String, dynamic> json) => General(
         jugadoresAmeGet: json["get"],
         parameters: Parameters.fromMap(json["parameters"]),
         errors: List<dynamic>.from(json["errors"].map((x) => x)),
         results: json["results"],
         paging: Paging.fromMap(json["paging"]),
-        response: List<Response>.from(
-            json["response"].map((x) => Response.fromMap(x))),
+        response: List<TablaGeneral>.from(
+            json["response"].map((x) => TablaGeneral.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
@@ -95,18 +94,19 @@ class Parameters {
       };
 }
 
-class Response {
-  Response({
+class TablaGeneral {
+  TablaGeneral({
     required this.league,
   });
 
   League league;
 
-  factory Response.fromJson(String str) => Response.fromMap(json.decode(str));
+  factory TablaGeneral.fromJson(String str) =>
+      TablaGeneral.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory Response.fromMap(Map<String, dynamic> json) => Response(
+  factory TablaGeneral.fromMap(Map<String, dynamic> json) => TablaGeneral(
         league: League.fromMap(json["league"]),
       );
 

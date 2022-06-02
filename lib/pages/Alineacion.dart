@@ -20,38 +20,12 @@ class Alineacion extends StatelessWidget {
     }
 
     return Scaffold(
-      /*
-      drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text('DrawerHeader'),
-              ),
-              ListTile(
-                title: const Text('Item 1'),
-              )
-            ],
-          ),
-        ),
-        */
-      appBar: AppBar(
-        title: const Text(
-          'Alineación',
-        ),
-        backgroundColor: Color(0xFF10203c),
-      ),
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: NetworkImage(
-                  'https://i.pinimg.com/474x/50/5e/c1/505ec1e1cf6e89b64c9b8f9ad5cdaa68.jpg'),
-              fit: BoxFit.cover),
+              image: AssetImage('assets/img/campo.jpg'), fit: BoxFit.fill),
         ),
         child: Column(children: [
           SizedBox(

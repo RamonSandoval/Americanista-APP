@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_futbol/pages/Alineacion.dart';
 import 'package:proyecto_futbol/pages/inicio.dart';
 import 'package:proyecto_futbol/pages/players.dart';
-import 'package:proyecto_futbol/pages/tabla.dart';
+import 'package:proyecto_futbol/pages/miclub.dart';
+import 'package:proyecto_futbol/pages/partidos.dart';
 import 'package:proyecto_futbol/pages/usuario.dart';
 import 'package:proyecto_futbol/routes/routes.dart';
 
@@ -20,9 +21,8 @@ class _OpenMainState extends State<OpenMain> {
   final List<Widget> _children = [
     Inicio(),
     Tabla(),
-    Players(),
-    Alineacion(),
-    Text("data")
+    Partidos(),
+    Usuario(),
   ];
 
   void onTabTapped(int index) {
@@ -40,27 +40,23 @@ class _OpenMainState extends State<OpenMain> {
           type: BottomNavigationBarType.fixed,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined, size: 20),
+              icon: Icon(Icons.home, size: 20),
               label: 'Inicio',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.table_chart, size: 20),
-              label: 'Tabla',
+              icon: Icon(Icons.sports_soccer_outlined, size: 20),
+              label: 'Mi Club',
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                Icons.account_box_outlined,
+                Icons.table_rows_outlined,
                 size: 20,
               ),
-              label: 'Jugadores',
+              label: 'Apertura 22',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.sports_soccer_outlined, size: 20),
-              label: 'Alineacion',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.question_mark_outlined, size: 20),
-              label: 'Informacion',
+              icon: Icon(Icons.account_circle_outlined, size: 20),
+              label: 'Perfil',
             ),
           ],
           currentIndex: _currentIndex,

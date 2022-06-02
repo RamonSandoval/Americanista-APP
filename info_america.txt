@@ -12,6 +12,9 @@ id:2295
 name: Cruz Azul
 
 
+last fixtures from team id (ultimos 10 partidos)
+next fixtures from team id (proximos partidos)
+
 
 Mexico 
 code:MX
@@ -20,6 +23,7 @@ Guillermo Ococho
 id:2098
 
 
+TimeZone:America/Mexico_City
 
 Liga MX id 262
 
@@ -28,6 +32,7 @@ Inicio (Noticias)
 Tabla general (Standings by league id)
 Jugadores del america (players squads)
 Informacion del estadio y ligas para las que juega
+
 
 
 
