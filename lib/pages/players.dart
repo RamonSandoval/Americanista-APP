@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:proyecto_futbol/pages/playinfo.dart';
 
@@ -20,9 +21,10 @@ class Players extends StatelessWidget {
     }
 
     return Scaffold(
+        backgroundColor: Color(0xFFeeea9e),
         body: Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10),
-            child: ListView.separated(
+            padding: const EdgeInsets.only(left: 5, right: 5),
+            child: ListView.builder(
               itemCount:
                   footballDataService.propiedadesJugadores[0].players.length,
               itemBuilder: (
@@ -46,45 +48,72 @@ class Players extends StatelessWidget {
                 posicion = posicion.replaceAll('Attacker', 'Delantero');
 
                 return Container(
-                  height: 60,
+                  height: 80,
                   alignment: Alignment.center,
-                  child: ListTile(
-                    onTap: () {
-                      /*Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (index) => PlayerInfo(
-                                    nombre: nombre,
-                                    posicion: posicion,
-                                    numero: numero,
-                                    edad: edad,
-                                  )));*/
-                    },
-                    title: Text(nombre),
-                    subtitle: Text(posicion,
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 138, 138, 138),
-                            fontSize: 12)),
-                    leading: CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        child: Image(
-                          image: NetworkImage(footballDataService
-                              .propiedadesJugadores[0].players[index].photo),
+                  child: Card(
+                    color: Color(0xFF192441),
+                    shadowColor: Color(0xFF192441),
+                    elevation: 10,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(25),
+                          topLeft: Radius.circular(25),
+                          bottomLeft: Radius.elliptical(80, 120),
+                          topRight: Radius.circular(25)),
+                      side: BorderSide(
+                        width: 3,
+                        color: Color(0xFF192441),
+                      ),
+                    ),
+                    child: ListTile(
+                      onTap: () {
+                        /*Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (index) => PlayerInfo(
+                                      nombre: nombre,
+                                      posicion: posicion,
+                                      numero: numero,
+                                      edad: edad,
+                                    )));*/
+                      },
+                      title: Text(
+                        nombre,
+                        style: GoogleFonts.bebasNeue(
+                            textStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.normal,
                         )),
-                    trailing: Text(
-                      numero.toString(),
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                      ),
+                      subtitle: Text(posicion,
+                          style: const TextStyle(
+                              color: Color.fromARGB(255, 138, 138, 138),
+                              fontSize: 12)),
+                      leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(40),
+                          child: Image(
+                            image: NetworkImage(footballDataService
+                                .propiedadesJugadores[0].players[index].photo),
+                          )),
+                      trailing: Text(
+                        numero.toString(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 );
               },
-              separatorBuilder: (context, index) {
+              /*separatorBuilder: (context, index) {
                 return Divider(
                   thickness: 1,
                   color: Colors.black,
                 );
-              },
+              },*/
             )));
   }
 }

@@ -6,30 +6,37 @@ import 'package:proyecto_futbol/models/jugadores.dart';
 import 'package:proyecto_futbol/models/partidos_modal.dart';
 import 'package:proyecto_futbol/models/tabla_general.dart';
 
+import '../models/news_modal.dart';
+
 class FootBallServices extends ChangeNotifier {
-  final String _urlBase = 'api-football-v1.p.rapidapi.com';
-  final String _apiKey = '069c410e33msh94b5d9703c72a69p1cd47djsn5f6506384e39';
-  String season = '';
+  final String _urlBaseSports = 'api-football-v1.p.rapidapi.com';
+  final String _apiKeySports =
+      '069c410e33msh94b5d9703c72a69p1cd47djsn5f6506384e39';
+  final String _urlBaseNews = 'newsapi.org';
+  final String _apiKeyNews = 'bb19b690d885429680d1d4b1872bbf0f';
 
   List<AlineacionTabla> propiedadesAlineacion = [];
   List<Jugadores> propiedadesJugadores = [];
   List<TablaGeneral> propiedadesTabla = [];
   List<PartidosLista> propiedadesPartidos = [];
   List<Apertura22> propiedadesApertura = [];
+  List<Article> articles = [];
 
   FootBallServices() {
     getServiceAlineacion();
     getServiceJugadores();
     getServicePartidos();
+    getServiceNews();
     getServiceApertura();
   }
 
   /* -------------------------------------------------------------------------------------- */
   //FUNCION QUE SE CONECTA A LA LISTA INFORMACION DE ALINEACION
   getServiceAlineacion() async {
-    final url = Uri.https(_urlBase, '/v3/fixtures/lineups',
+    final url = Uri.https(_urlBaseSports, '/v3/fixtures/lineups',
         {'fixture': '676200', 'team': '2287'});
-    final respuesta = await http.get(url, headers: {'X-RapidApi-Key': _apiKey});
+    final respuesta =
+        await http.get(url, headers: {'X-RapidApi-Key': _apiKeySports});
 
     final alineacion = Alineacion.fromJson(respuesta.body);
     propiedadesAlineacion = alineacion.response;
@@ -40,8 +47,10 @@ class FootBallServices extends ChangeNotifier {
 
   //FUNCION QUE SE CONECTA A LA LISTA INFORMACION DE JUGADORES
   getServiceJugadores() async {
-    final url = Uri.https(_urlBase, '/v3/players/squads', {'team': '2287'});
-    final respuesta = await http.get(url, headers: {'X-RapidApi-Key': _apiKey});
+    final url =
+        Uri.https(_urlBaseSports, '/v3/players/squads', {'team': '2287'});
+    final respuesta =
+        await http.get(url, headers: {'X-RapidApi-Key': _apiKeySports});
 
     final jugadores = JugadoresAme.fromJson(respuesta.body);
     propiedadesJugadores = jugadores.response;
@@ -51,22 +60,23 @@ class FootBallServices extends ChangeNotifier {
 
   /* -------------------------------------------------------------------------------------- */
   getServiceApertura() async {
-    final url = Uri.https(_urlBase, '/v2/fixtures/team/2287/next/20');
-    final respuesta = await http.get(url, headers: {'X-RapidApi-Key': _apiKey});
+    final url = Uri.https(_urlBaseSports, '/v2/fixtures/team/2287/next/20');
+    final respuesta =
+        await http.get(url, headers: {'X-RapidApi-Key': _apiKeySports});
 
     final jugadores = AperturaPartidos.fromJson(respuesta.body);
     propiedadesApertura = jugadores.api.fixtures;
-    print(propiedadesApertura[0].awayTeam.teamName);
+    //print(propiedadesApertura[0].awayTeam.teamName);
 
     notifyListeners();
   }
   /*-------------------------------------------------------------------------------------- */
 
   getServicePartidos() async {
-    final url = Uri.https(_urlBase, '/v2/fixtures/team/2287/last/15',
+    final url = Uri.https(_urlBaseSports, '/v2/fixtures/team/2287/last/15',
         {'timezone': 'America/Mexico_city'});
     final respuesta = await http.get(url, headers: {
-      'X-RapidApi-Key': _apiKey,
+      'X-RapidApi-Key': _apiKeySports,
       'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
     });
 
@@ -75,4 +85,18 @@ class FootBallServices extends ChangeNotifier {
     // print(propiedadesPartidos[0].homeTeam.teamName);
     notifyListeners();
   }
+
+  /* -------------------------------------------------------------------------------------- */
+  //FUNCION QUE SE CONECTA A LAS NOTICIAS
+  getServiceNews() async {
+    final url = Uri.https(_urlBaseNews, '/v2/top-headlines',
+        {'country': 'mx', 'category': 'sports', 'apiKey': _apiKeyNews});
+    final respuesta = await http.get(url);
+
+    final noticias = Noticias.fromJson(respuesta.body);
+    articles = noticias.articles!;
+    print(articles[0].title);
+    notifyListeners();
+  }
+  /* -------------------------------------------------------------------------------------- */
 }
