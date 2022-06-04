@@ -58,10 +58,11 @@ class Alineacion extends StatelessWidget {
               Column(children: [
                 ClipOval(
                   child: Image(
-                      height: 50,
-                      width: 50,
-                      image: NetworkImage(footballDataService
-                          .propiedadesJugadores[0].players[21].photo)),
+                    height: 50,
+                    width: 50,
+                    image: NetworkImage(footballDataService
+                        .propiedadesJugadores[0].players[21].photo),
+                  ),
                 ),
                 Text(
                   footballDataService

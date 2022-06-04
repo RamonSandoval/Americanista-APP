@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "808090396218",
+    "project_id": "americanista-login",
+    "storage_bucket": "americanista-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808090396218:android:b3f3b3359a380483937703",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_futbol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808090396218-8ee88uo5dvttu7l0dr8bqr0nm0irfa5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5SkT4M88j5RWkJ0b18z-CMupguqL6wHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808090396218-8ee88uo5dvttu7l0dr8bqr0nm0irfa5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
