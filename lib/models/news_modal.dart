@@ -62,9 +62,9 @@ class Article {
         source: Source.fromMap(json["source"]),
         author: json["author"] ?? null.toString(),
         title: json["title"],
-        description: json["description"],
+        description: json["description"].toString(),
         url: json["url"],
-        urlToImage: json["urlToImage"],
+        urlToImage: json["urlToImage"].toString(),
         publishedAt: DateTime.parse(json["publishedAt"]),
         content: json["content"] ?? null.toString(),
       );

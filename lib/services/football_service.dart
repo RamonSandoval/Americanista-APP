@@ -21,6 +21,7 @@ class FootBallServices extends ChangeNotifier {
   List<PartidosLista> propiedadesPartidos = [];
   List<Apertura22> propiedadesApertura = [];
   List<Article> articles = [];
+  Map<String, dynamic> propiedadesLibro = {};
 
   FootBallServices() {
     getServiceAlineacion();
