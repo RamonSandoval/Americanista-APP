@@ -69,6 +69,7 @@ flutter:
       - assets/img/logo_ameFade.png
       - assets/img/moneda.png
       - assets/img/fondo_perfil.png
+      - assets/img/error_image.jpg
   
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

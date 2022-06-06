@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../services/football_service.dart';
@@ -54,10 +55,12 @@ class Alineacion extends StatelessWidget {
               Text(
                 footballDataService
                     .propiedadesAlineacion[0].startXi[10].player.name,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16),
+                style: GoogleFonts.bebasNeue(
+                    textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                )),
               ),
             ]),
             SizedBox(
@@ -92,10 +95,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[5].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
                 SizedBox(
@@ -125,10 +130,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[8].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
               ],
@@ -164,10 +171,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[9].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
                 Column(children: [
@@ -194,10 +203,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[6].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
               ],
@@ -229,10 +240,12 @@ class Alineacion extends StatelessWidget {
               Text(
                 footballDataService
                     .propiedadesAlineacion[0].startXi[7].player.name,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16),
+                style: GoogleFonts.bebasNeue(
+                    textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                )),
               ),
             ]),
             SizedBox(
@@ -266,10 +279,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[1].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
                 Column(children: [
@@ -296,10 +311,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[2].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
                 Column(children: [
@@ -326,10 +343,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[4].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
                 Column(children: [
@@ -356,10 +375,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[3].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
               ],
@@ -395,10 +416,12 @@ class Alineacion extends StatelessWidget {
                   Text(
                     footballDataService
                         .propiedadesAlineacion[0].startXi[0].player.name,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16),
+                    style: GoogleFonts.bebasNeue(
+                        textStyle: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    )),
                   ),
                 ]),
               ],

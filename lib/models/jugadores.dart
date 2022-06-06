@@ -23,7 +23,6 @@ class JugadoresAme {
 
   factory JugadoresAme.fromJson(String str) =>
       JugadoresAme.fromMap(json.decode(str));
-
   String toJson() => json.encode(toMap());
 
   factory JugadoresAme.fromMap(Map<String, dynamic> json) => JugadoresAme(

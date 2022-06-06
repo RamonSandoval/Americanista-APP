@@ -54,15 +54,15 @@ class Inicio extends StatelessWidget {
                   if (!await launchUrl(_url)) throw 'Error al abrir $_url';
                 }
 
-                if (autor == null) {
-                  return Text('Desconocido');
+                String desconocido = 'Desconocido';
+
+                if (autor == 'null') {
+                  autor = desconocido;
                 }
 
-                if (imagen.isNotEmpty) {
-                  imagen = footballDataService.articles[index].urlToImage;
-                } else {
+                if (imagen == 'null') {
                   imagen =
-                      'https://www.redeszone.net/app/uploads-redeszone.net/2021/09/Error-404-portada.jpg';
+                      'https://es.calcuworld.com/wp-content/uploads/sites/2/2018/04/medidas-de-un-campo-de-futbol.jpg';
                 }
 
                 return InkWell(
@@ -106,34 +106,16 @@ class Inicio extends StatelessWidget {
                                     style: GoogleFonts.bebasNeue(
                                         textStyle: TextStyle(
                                       color: Color.fromARGB(255, 0, 0, 0),
-                                      fontSize: 13,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.normal,
                                     )),
                                   ),
-                                  Align(
-                                    alignment: Alignment.bottomCenter,
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: <Widget>[
-                                        Container(
-                                            child: Text(autor,
-                                                style: GoogleFonts.bebasNeue(
-                                                    textStyle: TextStyle(
-                                                  color: Color.fromARGB(
-                                                      255, 110, 110, 110),
-                                                  fontSize: 8,
-                                                  letterSpacing: 1,
-                                                  fontWeight: FontWeight.normal,
-                                                )))),
-                                        FlatButton(
-                                          onPressed: null,
-                                          child: Text(
-                                              date.day.toString() +
-                                                  "-" +
-                                                  date.month
-                                                      .toString()
-                                                      .replaceAll('6', 'Junio'),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Container(
+                                          child: Text(autor,
                                               style: GoogleFonts.bebasNeue(
                                                   textStyle: TextStyle(
                                                 color: Color.fromARGB(
@@ -141,11 +123,26 @@ class Inicio extends StatelessWidget {
                                                 fontSize: 8,
                                                 letterSpacing: 1,
                                                 fontWeight: FontWeight.normal,
-                                              ))),
-                                        )
-                                      ],
-                                    ),
-                                  )
+                                              )))),
+                                      FlatButton(
+                                        onPressed: null,
+                                        child: Text(
+                                            date.day.toString() +
+                                                "-" +
+                                                date.month
+                                                    .toString()
+                                                    .replaceAll('6', 'Junio'),
+                                            style: GoogleFonts.bebasNeue(
+                                                textStyle: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 110, 110, 110),
+                                              fontSize: 8,
+                                              letterSpacing: 1,
+                                              fontWeight: FontWeight.normal,
+                                            ))),
+                                      )
+                                    ],
+                                  ),
                                 ],
                               ),
                             ),
