@@ -1,6 +1,6 @@
-# Americanista
+Americanista
 
-A new Flutter project.
+Aplicacion destinada al aficionado americanista con el fin de mostrar la informacion acerca de su equipo y las noticias mas relevantes acerca del deporte.
 
 ## Getting Started
 
