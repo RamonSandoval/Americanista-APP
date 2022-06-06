@@ -21,7 +21,6 @@ class Players extends StatelessWidget {
     }
 
     return Scaffold(
-        backgroundColor: Color(0xFFeeea9e),
         body: Padding(
             padding: const EdgeInsets.only(left: 5, right: 5),
             child: ListView.builder(
@@ -53,7 +52,7 @@ class Players extends StatelessWidget {
                   child: Card(
                     color: Color(0xFF192441),
                     shadowColor: Color(0xFF192441),
-                    elevation: 10,
+                    elevation: 4,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                           bottomRight: Radius.circular(25),

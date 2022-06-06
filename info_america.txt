@@ -25,7 +25,7 @@ id:2098
 
 TimeZone:America/Mexico_City
 
-Liga MX id 262
+Liga MX id 262, 297, 298, 299, 584, 2656,3517 4302
 
 
 Inicio (Noticias)

@@ -11,7 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 class Tabla extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
           appBar: AppBar(
               centerTitle: true,
@@ -30,9 +30,6 @@ class Tabla extends StatelessWidget {
                     text: '11 Ideal',
                   ),
                   Tab(
-                    text: 'Tabla',
-                  ),
-                  Tab(
                     text: 'Partidos',
                   )
                 ],
@@ -41,7 +38,6 @@ class Tabla extends StatelessWidget {
             children: [
               Center(child: Players()),
               Center(child: Alineacion()),
-              Center(child: TablaGeneral()),
               Center(child: Partidos()),
             ],
           )));

@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:proyecto_futbol/models/alineacion_modal.dart';
 import 'package:proyecto_futbol/models/apertura22_modal.dart';
 import 'package:proyecto_futbol/models/jugadores.dart';
 import 'package:proyecto_futbol/models/partidos_modal.dart';
-import 'package:proyecto_futbol/models/tabla_general.dart';
 
 import '../models/news_modal.dart';
 
@@ -17,11 +17,9 @@ class FootBallServices extends ChangeNotifier {
 
   List<AlineacionTabla> propiedadesAlineacion = [];
   List<Jugadores> propiedadesJugadores = [];
-  List<TablaGeneral> propiedadesTabla = [];
   List<PartidosLista> propiedadesPartidos = [];
   List<Apertura22> propiedadesApertura = [];
   List<Article> articles = [];
-  Map<String, dynamic> propiedadesLibro = {};
 
   FootBallServices() {
     getServiceAlineacion();
@@ -55,20 +53,18 @@ class FootBallServices extends ChangeNotifier {
 
     final jugadores = JugadoresAme.fromJson(respuesta.body);
     propiedadesJugadores = jugadores.response;
-    //print(propiedadesJugadores[0].players[0].name);
     notifyListeners();
   }
 
   /* -------------------------------------------------------------------------------------- */
-  getServiceApertura() async {
+
+  Future getServiceApertura() async {
     final url = Uri.https(_urlBaseSports, '/v2/fixtures/team/2287/next/20');
     final respuesta =
         await http.get(url, headers: {'X-RapidApi-Key': _apiKeySports});
 
     final jugadores = AperturaPartidos.fromJson(respuesta.body);
     propiedadesApertura = jugadores.api.fixtures;
-    //print(propiedadesApertura[0].awayTeam.teamName);
-
     notifyListeners();
   }
   /*-------------------------------------------------------------------------------------- */
@@ -80,10 +76,8 @@ class FootBallServices extends ChangeNotifier {
       'X-RapidApi-Key': _apiKeySports,
       'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
     });
-
     final partidos = Partidos.fromJson(respuesta.body);
     propiedadesPartidos = partidos.api.fixtures;
-    // print(propiedadesPartidos[0].homeTeam.teamName);
     notifyListeners();
   }
 
@@ -96,7 +90,6 @@ class FootBallServices extends ChangeNotifier {
 
     final noticias = Noticias.fromJson(respuesta.body);
     articles = noticias.articles!;
-    print(articles[0].title);
     notifyListeners();
   }
   /* -------------------------------------------------------------------------------------- */

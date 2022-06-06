@@ -10,6 +10,7 @@ import 'package:proyecto_futbol/pages/perfil.dart';
 import 'package:proyecto_futbol/pages/players.dart';
 import 'package:proyecto_futbol/routes/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Usuario extends StatefulWidget {
   static const TextStyle optionStyle =
@@ -43,10 +44,21 @@ class _UsuarioState extends State<Usuario> {
   @override
   Widget build(BuildContext context) {
     //controller textfield
-    TextEditingController _emailController = TextEditingController();
-    TextEditingController _passwordController = TextEditingController();
+    String error = 'Favor de llenar los campos';
+
+    TextEditingController _emailController = TextEditingController(text: "");
+    TextEditingController _passwordController = TextEditingController(text: "");
+
+    bool _isVisible = false;
+
+    void showToast() {
+      setState(() {
+        _isVisible = true;
+      });
+    }
 
     return Scaffold(
+
         //resizeToAvoidBottomInset: false,
         backgroundColor: Color(0xFFeeea9e),
         body: SingleChildScrollView(
@@ -117,6 +129,7 @@ class _UsuarioState extends State<Usuario> {
                           )),
                     ),
                   ),
+                  Visibility(child: Text(error), visible: _isVisible),
                   SizedBox(
                     height: 12,
                   ),
@@ -127,10 +140,10 @@ class _UsuarioState extends State<Usuario> {
                         decoration: TextDecoration.underline),
                   ),
                   SizedBox(
-                    height: 60,
+                    height: 30,
                   ),
                   Container(
-                    width: double.infinity,
+                    width: 120,
                     child: RawMaterialButton(
                       fillColor: Color(0xFF192441),
                       padding: EdgeInsets.symmetric(vertical: 15),
@@ -148,6 +161,12 @@ class _UsuarioState extends State<Usuario> {
                               MaterialPageRoute(
                                   builder: (context) => OpenMain()));
                         }
+                        if (user == null) {
+                          print('i');
+                          setState(() {
+                            _isVisible = true;
+                          });
+                        }
                       },
                       child: Text(
                         "Iniciar Sesion",
@@ -155,6 +174,29 @@ class _UsuarioState extends State<Usuario> {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 40,
+                        child: Image(
+                            image: NetworkImage(
+                                'https://alcantarafoundation.com/wp-content/uploads/2020/12/Logo-Facebook.png')),
+                      ),
+                      Text('   ó   '),
+                      Container(
+                        width: 40,
+                        child: ClipOval(
+                          child: Image(
+                              image: NetworkImage(
+                                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkfNMnsU2cUDDcDoi_Uz9Y1v-3_WviVMLM1TrroFFHJtaqiqS2yXFHNNqWHXE_yWUvP6E&usqp=CAU')),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),
