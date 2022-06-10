@@ -2,6 +2,12 @@ Americanista
 
 Aplicacion destinada al aficionado americanista con el fin de mostrar la informacion acerca de su equipo y las noticias mas relevantes acerca del deporte.
 
+Credeciales de Acceso
+
+-----------------------------
+Email: cr7@gmail.com        |
+Password: 123456            |
+-----------------------------
 ## Getting Started
 
 This project is a starting point for a Flutter application.
